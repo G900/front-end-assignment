@@ -16,6 +16,13 @@ body, html {
 #tremor-image {
     background-image: linear-gradient(rgba(41, 41, 41, 0.6), rgba(41, 41, 41, 0.6)), url("../tremor.jpg");
 }
+.hover-layer{
+    background-color: rgba(231, 23, 33, 0.226);
+    opacity: 0;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
 .image{
     opacity: 1.0;
     height: 100%;
@@ -31,13 +38,7 @@ body, html {
     min-height: 30px;
 
 }
-.hover-layer{
-    background-color: rgba(231, 23, 33, 0.226);
-    opacity: 0;
-    position: relative;
-    height: 100%;
-    width: 100%;
-}
+/* show read-more button on hover grid items */
 .item-1:hover .read-more-button,
 .item-2:hover .read-more-button,
 .item-3:hover .read-more-button,
@@ -47,13 +48,14 @@ body, html {
     transition: .5s ease;
     position: relative;
 }
-
+/* remove read-more button when not hover */
 .item-1:not(:hover) .read-more-button,
 .item-2:not(:hover) .read-more-button,
 .item-3:not(:hover) .read-more-button,
 .item-4:not(:hover) .read-more-button{
     visibility: hidden;
 }
+/* show transparent layer on hover grid items */
 .item-1:hover .hover-layer,
 .item-2:hover .hover-layer,
 .item-3:hover .hover-layer,
@@ -61,6 +63,7 @@ body, html {
     opacity: 1.0;
     transition: .5s ease;
 }
+/* remove transparent layer when not hover grid items */
 .item-1:not(:hover) .hover-layer,
 .item-2:not(:hover) .hover-layer,
 .item-3:not(:hover) .hover-layer,
@@ -85,33 +88,39 @@ h1{
     color:#f1f1f1;
  
 }
+/* make 4x4 container which will take all visible height */
 .grid-container {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
     height: 100vh;
   }
+  /* grid item */
 .item-1 {
     grid-column: 1/2;
     grid-row: 1/2;
   }
-  .item-2 {
+/* grid item */
+.item-2 {
     grid-column: 2/3;
     grid-row: 1/2;
   }
-  .item-3 {
+ /* grid item */
+.item-3 {
     grid-column: 1/2;
     grid-row: 2/3;
   }
+/* grid item */
   .item-4 {
     grid-column: 2/3;
     grid-row: 2/3;
   }
+/* navigation side bar*/
 .sidenav {
-    height: 100%; 
-    width: 0; 
+    height: 100%; /* take whole page height*/
+    width: 0; /* value will be changed by script when click button */
     position: fixed;
-    z-index: 1; 
+    z-index: 1; /* on top of other elements*/
     top: 0;
     left: 0;
     background-color: #111;
@@ -120,9 +129,8 @@ h1{
     transition: 0.5s; 
 }
  
-/* The navigation menu links */
+/* Side navigation menu links */
 .sidenav a {
-
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -133,7 +141,7 @@ h1{
 .sidenav a:hover, .offcanvas a:focus{
     color: #f1f1f1;
 }
- 
+ /* The side navigation close button */
 .sidenav .closebtn {
     position: absolute;
     top: 0;
@@ -149,7 +157,7 @@ h1{
   width:100%;
 
 }
-
+/* Top navigation bar */
 .topnav {
     background-color: rgb(0, 0, 0);
     overflow: hidden;
@@ -162,7 +170,6 @@ h1{
 }
 
 .topnav a {
-
     float: left;
     display: block;
     color: #f2f2f2;
@@ -174,6 +181,7 @@ h1{
 .topnav a:hover {
     background-color: rgba(231, 23, 33, 0.226);
 }
+/* readme button */
 .btn {
     cursor: inherit;
     border: 3px solid #f2f2f2;
